@@ -32,6 +32,13 @@ public class InscripcionView extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         txtMatricula = new javax.swing.JTextField();
+        jLabel3 = new javax.swing.JLabel();
+        txtMatricula1 = new javax.swing.JTextField();
+        txtCodigoAsignatura = new javax.swing.JTextField();
+        jLabel4 = new javax.swing.JLabel();
+        txtIdGrupo = new javax.swing.JTextField();
+        jButton1 = new javax.swing.JButton();
+        jButton2 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -66,8 +73,30 @@ public class InscripcionView extends javax.swing.JFrame {
         getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 150, -1, -1));
         getContentPane().add(txtMatricula, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 150, 170, -1));
 
+        jLabel3.setText("Código de Asignatura:");
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 200, -1, -1));
+        getContentPane().add(txtMatricula1, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 150, 170, -1));
+        getContentPane().add(txtCodigoAsignatura, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 200, 170, -1));
+
+        jLabel4.setText("Sección (ej: A):");
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 260, -1, -1));
+        getContentPane().add(txtIdGrupo, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 260, 170, -1));
+
+        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos/Inscribir.png"))); // NOI18N
+        jButton1.setText("INSCRIBIR");
+        jButton1.addActionListener(this::jButton1ActionPerformed);
+        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 320, 130, 40));
+
+        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos/Volver.png"))); // NOI18N
+        jButton2.setText("Volver");
+        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 400, 90, 30));
+
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -95,9 +124,16 @@ public class InscripcionView extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    public javax.swing.JButton jButton1;
+    public javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JTextField txtMatricula;
+    public javax.swing.JTextField txtCodigoAsignatura;
+    public javax.swing.JTextField txtIdGrupo;
+    public javax.swing.JTextField txtMatricula;
+    private javax.swing.JTextField txtMatricula1;
     // End of variables declaration//GEN-END:variables
 }

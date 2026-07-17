@@ -2,6 +2,7 @@ package org.unisiga.controller;
 
 import javax.swing.JOptionPane;
 import org.unisiga.model.*;
+import org.unisiga.view.InscripcionView;
 import org.unisiga.view.MenuPrincipalView;
 
 public class MenuPrincipalController {
@@ -72,9 +73,10 @@ public class MenuPrincipalController {
     }
 
     private void abrirInscripcion() {
-        JOptionPane.showMessageDialog(vista,
-                "Modulo de Inscripcion — Proximamente",
-                "UniSiga", JOptionPane.INFORMATION_MESSAGE);
+        InscripcionView inscripcionVista = new InscripcionView();
+        inscripcionController.vincularVista(inscripcionVista, vista);
+        vista.setVisible(false);
+        inscripcionVista.setVisible(true);
     }
 
     private void abrirRegistrarNota() {
