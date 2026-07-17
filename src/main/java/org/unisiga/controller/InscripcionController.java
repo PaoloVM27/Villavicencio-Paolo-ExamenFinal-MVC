@@ -37,7 +37,7 @@ public class InscripcionController {
             }
         }
         if (estudiante == null) {
-            return "ERROR: No se encontró un estudiante con matrícula " + matricula + ".";
+            return "ERROR: No se encontro un estudiante con matricula " + matricula + ".";
         }
 
         Asignatura asignatura = null;
@@ -48,7 +48,7 @@ public class InscripcionController {
             }
         }
         if (asignatura == null) {
-            return "ERROR: No se encontró la asignatura con código " + codigoAsignatura + ".";
+            return "ERROR: No se encontro la asignatura con codigo " + codigoAsignatura + ".";
         }
 
         Seccion seccion = null;
@@ -78,7 +78,7 @@ public class InscripcionController {
 
         try {
             estudiante.inscribirSeccion(seccion);
-            return "OK: " + estudiante.getNombre() + " inscrito en " + asignatura.getNombre() + " - Sección " + idGrupo + ".";
+            return "OK: " + estudiante.getNombre() + " inscrito en " + asignatura.getNombre() + " - Seccion " + idGrupo + ".";
         } catch (Exception ex) {
             return "ERROR: " + ex.getMessage();
         }
