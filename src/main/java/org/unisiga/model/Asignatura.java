@@ -29,24 +29,27 @@ public class Asignatura {
     }
 
     public void agregarPrerrequisito(Asignatura asig) {
-        // TODO: Agregar asignatura de prerrequisito evitando duplicados
-        throw new UnsupportedOperationException("Método agregarPrerrequisito() no implementado aún.");
+        if (asig != null && !prerrequisitos.contains(asig)) {
+            prerrequisitos.add(asig);
+        }
     }
 
     /**
      * LÓGICA DE COMPOSICIÓN: Instancia una sección semestral y la asocia.
      */
     public Seccion crearSeccion(char idGrupo, int cupoMaximo, String horario) {
-        // TODO: Crear y retornar una nueva sección. Recuerda que el constructor de Sección es restringido.
-        throw new UnsupportedOperationException("Método crearSeccion() no implementado aún.");
+        Seccion seccion = new Seccion(idGrupo, cupoMaximo, horario, this);
+        secciones.add(seccion);
+        return seccion;
     }
 
     /**
      * LÓGICA DE COMPOSICIÓN: Instancia una evaluación unificada para la asignatura.
      */
     public Evaluacion crearEvaluacion(int id, String titulo, float ponderacion) {
-        // TODO: Crear y retornar una nueva evaluación oficial de la cátedra.
-        throw new UnsupportedOperationException("Método crearEvaluacion() no implementado aún.");
+        Evaluacion evaluacion = new Evaluacion(id, titulo, ponderacion, this);
+        evaluaciones.add(evaluacion);
+        return evaluacion;
     }
 
     // Getters
