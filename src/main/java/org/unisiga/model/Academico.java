@@ -29,8 +29,24 @@ public class Academico extends MiembroUniversitario {
      * [REGLAS]: Validar parámetros, rango de notas [1.0, 7.0] y que la evaluación pertenezca a la asignatura.
      */
     public void registrarNota(Inscripcion inscripcion, Evaluacion evaluacion, float valorNota) {
-        // TODO: Implementar la validación e inserción/actualización de la nota (Tres Vías)
-        throw new UnsupportedOperationException("Método registrarNota() no implementado aún.");
+        if (inscripcion == null || evaluacion == null) {
+            throw new IllegalArgumentException("La inscripción y la evaluación no pueden ser nulas.");
+        }
+        if (valorNota < 1.0f || valorNota > 7.0f) {
+            throw new IllegalArgumentException("La nota debe estar en el rango [1.0, 7.0].");
+        }
+        if (!evaluacion.getAsignatura().equals(inscripcion.getSeccion().getAsignatura())) {
+            throw new IllegalArgumentException("La evaluación no pertenece a la asignatura de la sección inscrita.");
+        }
+        for (Calificacion cal : inscripcion.getCalificaciones()) {
+            if (cal.getEvaluacion().equals(evaluacion)) {
+                cal.setNota(valorNota);
+                return;
+            }
+        }
+        Calificacion nuevaCalificacion = new Calificacion(valorNota, inscripcion, evaluacion);
+        inscripcion.getCalificaciones().add(nuevaCalificacion);
+        evaluacion.getCalificaciones().add(nuevaCalificacion);
     }
 
     // Getters y Setters

@@ -31,9 +31,15 @@ public class Estudiante extends MiembroUniversitario {
      * [REGLAS]: Validar que la sección no sea nula y que cuente con cupos disponibles.
      */
     public void inscribirSeccion(Seccion seccion) {
-        // TODO: Implementar la lógica del control de cupos y la creación de la clase de asociación 'Inscripcion'
-        // No olvides agregar la nueva inscripción tanto a la lista de este estudiante como a la de la sección.
-        throw new UnsupportedOperationException("Método inscribirSeccion() no implementado aún.");
+        if (seccion == null) {
+            throw new IllegalArgumentException("La sección no puede ser nula.");
+        }
+        if (seccion.getInscripciones().size() >= seccion.getCupoMaximo()) {
+            throw new IllegalStateException("Sin cupos disponibles");
+        }
+        Inscripcion inscripcion = new Inscripcion(this, seccion);
+        this.inscripciones.add(inscripcion);
+        seccion.getInscripciones().add(inscripcion);
     }
 
     // Getters y Setters
