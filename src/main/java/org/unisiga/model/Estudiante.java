@@ -23,8 +23,7 @@ public class Estudiante extends MiembroUniversitario {
 
     @Override
     public boolean login(String password) {
-        // TODO: Implementar validación simulada de clave del estudiante (largo mínimo de 8 caracteres)
-        throw new UnsupportedOperationException("Método login() no implementado aún.");
+        return password != null && password.length() >= 8;
     }
 
     /**

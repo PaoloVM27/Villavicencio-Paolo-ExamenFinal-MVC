@@ -21,8 +21,7 @@ public class Academico extends MiembroUniversitario {
 
     @Override
     public boolean login(String password) {
-        // TODO: Implementar validación simulada de MFA docente (requiere que el password contenga '@')
-        throw new UnsupportedOperationException("Método login() no implementado aún.");
+        return password != null && password.contains("@");
     }
 
     /**
